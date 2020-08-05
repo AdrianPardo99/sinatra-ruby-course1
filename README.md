@@ -29,3 +29,7 @@
   end
 
 ```
+# Hints and tools of the Gem #
+Sinatra can create and use HTML templates, that we can use in the files embedded ruby \-\> .erb files.
+
+The erb files contains the HTML markdown and many code of Ruby
