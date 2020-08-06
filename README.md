@@ -39,7 +39,7 @@ Sinatra can support many petitions like GET, POST, DELETE, PUT following the act
 
 ```ruby
   petition 'path' do
-    #Ruby code and HTML code
+    #Ruby code and HTML code or embedded markdown Ruby/HTML
   end
 ```
 
@@ -49,6 +49,6 @@ Sinatra can support many petitions like GET, POST, DELETE, PUT following the act
     @varArgument=params[:arg]
     #or
     @varArgument=params["arg"]
-    #Ruby code and HTML code
+    #Ruby code and HTML code or embedded markdown Ruby/HTML
   end
 ```
