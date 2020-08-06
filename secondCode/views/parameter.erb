@@ -32,30 +32,26 @@
     <div class="row">
       <div class="col l2"></div>
       <div class="col l8 m12 s12">
-        <center><h2>Workshop application<br>Welcome</h2></center>
-        <table class="highlight centered responsive-table">
-          <thead>
-            <tr>
-              <th>Workshop</th>
-              <th>Access description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @file.drop(2).each do |i|%>
-            <tr>
-              <td><%=File.basename(i,".*")%></td>
-              <td><a href="/<%=File.basename(i,".*")%>" class="waves-effect waves-light btn deep-purple darken-4 pulse"><i class="material-icons">info</i></a></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <div class="input-field">
+          <label for="workshop-name">Workshop</label>
+          <input type="text" name="workshop-name" id="workshop-id" value="<%=@varArg%>" readonly>
+        </div>
+        <div class="input-field">
+          <label for="workshop-desc">Description about</label>
+          <input type="text" name="workshop-desc" id="workshop-desc" value="<%=@valueDes%>" readonly>
+        </div>
+        <% if @valueDes!="Nothing" %>
+        <form action="/<%=@varArg%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" name="action" class="btn waves-effect waves-light deep-purple darken-4 pulse">
+            Workshop <i class="material-icons right">delete</i>
+          </button>
+        </form>
+        <% else %>
+        <a href="/" class="waves-effect waves-light btn deep-purple darken-4 pulse"><i class="material-icons">home</i></a>
+        <% end %>
       </div>
       <div class="col l2"></div>
     </div>
-    <script>
-      $(document).ready(function(){
-        $('.sidenav').sidenav();
-      });
-    </script>
   </body>
 </html>
