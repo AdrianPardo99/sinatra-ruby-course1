@@ -32,4 +32,23 @@
 # Hints and tools of the Gem #
 Sinatra can create and use HTML templates, that we can use in the files embedded ruby \-\> .erb files.
 
-The erb files contains the HTML markdown and many code of Ruby
+The erb files contains the HTML markdown template and many code of Ruby
+
+# Support HTTP petition Sinatra #
+Sinatra can support many petitions like GET, POST, DELETE, PUT following the action in the Ruby code language
+
+```ruby
+  petition 'path' do
+    #Ruby code and HTML code
+  end
+```
+
+# Arguments path sinatra #
+```ruby
+  petition 'path/:arg' do
+    @varArgument=params[:arg]
+    #or
+    @varArgument=params["arg"]
+    #Ruby code and HTML code
+  end
+```
