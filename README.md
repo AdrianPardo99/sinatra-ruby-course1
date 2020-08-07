@@ -52,3 +52,19 @@ Sinatra can support many petitions like GET, POST, DELETE, PUT following the act
     #Ruby code and HTML code or embedded markdown Ruby/HTML
   end
 ```
+
+# Workshop mini project #
+In the directory secondCode you can find a mini webapp.
+
+The app contains a Materialize CSS, Material Icons and the more css,js files in the public directory
+
+For run the app you only need to run the follow command
+
+```bash
+#In Windows or MAC
+  ruby sec.rb
+
+#In Linux
+  chmod +x sec.rb
+  ./sec.rb
+```
