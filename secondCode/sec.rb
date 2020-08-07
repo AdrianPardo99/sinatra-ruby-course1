@@ -12,6 +12,11 @@ def read_file(name)
   end
 end
 
+
+def file_exist?(name)
+  File.file?("dir/#{name}.txt")
+end
+
 def write_file(name,content)
   File.open("dir/#{name}.txt","w") do |file|
     file.print(content)
@@ -48,9 +53,9 @@ end
 # "<h1>Hello</h1>"
 #end
 
-get '/:nombre' do
-  @varArg=params[:nombre]
-  @filename="dir/"+params[:nombre]+".txt"
+get '/:name' do
+  @varArg=params[:name]
+  @filename="dir/"+params[:name]+".txt"
   @valueDes=read_file(@filename)
   erb :parameter
 end
@@ -68,4 +73,25 @@ end
 delete '/:name' do
   delete_file(params[:name])
   redirect to('/')
+end
+
+get '/:name/edit' do
+  @nameWorkshop=params[:name]
+  if file_exist?(@nameWorkshop)
+    @data=read_file("dir/#{@nameWorkshop}.txt")
+    erb :edition
+  else
+    redirect to('/')
+  end
+end
+
+put '/:name' do
+  @nameWorkshop=params[:name]
+  @descWorkshop=params["desc"]
+  if !@descWorkshop.empty?
+    if file_exist?(@nameWorkshop)
+      write_file(@nameWorkshop,@descWorkshop)
+    end
+  end
+  redirect to('/'+@nameWorkshop)
 end
