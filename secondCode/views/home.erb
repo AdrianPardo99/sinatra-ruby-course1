@@ -41,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @file.drop(2).each do |i|%>
+            <% @file.each do |i|%>
             <tr>
               <td><%=File.basename(i,".*")%></td>
               <td><a href="/<%=File.basename(i,".*")%>" class="waves-effect waves-light btn deep-purple darken-4 pulse"><i class="material-icons">info</i></a></td>

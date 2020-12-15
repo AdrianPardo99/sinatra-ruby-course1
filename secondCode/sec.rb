@@ -41,6 +41,8 @@ get '/' do
     #end
   #}
   @value=0
+  @file.delete_at(@file.index("."))
+  @file.delete_at(@file.index(".."))
   erb :home
 end
 
